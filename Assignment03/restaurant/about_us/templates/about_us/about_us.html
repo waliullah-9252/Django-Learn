@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<h1 class="about-design">About Us</h1>
+<div class="container">
+    <div class="row mt-1 p-5">
+        <div class="col-md-6">
+            <img class="w-100" src="{% static 'images/food.jpg' %}" alt="About Image"/>
+        </div>
+        <div class="col-md-6">
+            <h1 class="title">We Are Feane</h1>
+            <p class="desc">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All</p>
+        </div>
+    </div>
+</div>
+{% endblock  %}

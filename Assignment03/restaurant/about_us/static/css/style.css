@@ -1,0 +1,20 @@
+
+.about-design{
+    background-color: #050589;
+    color: white;
+    font-size: 50px;
+    width: 400px;
+    margin: auto;
+    padding: 10px 30px;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-align: center;
+
+}
+.title{
+    font-size: 50px;
+}
+.desc{
+    font-size: 22px;
+    color: #979191e7;
+}
