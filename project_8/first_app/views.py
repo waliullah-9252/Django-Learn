@@ -28,6 +28,7 @@ def user_login(request):
         if request.method == 'POST':
             form = AuthenticationForm(request=request, data = request.POST)
             if form.is_valid():
+                messages.success(request, 'Account was successfully Logged In')
                 name = form.cleaned_data['username']
                 userpass = form.cleaned_data['password']
                 #check kortaci database user ta ase kina
@@ -55,8 +56,9 @@ def profile(request):
         return redirect('signup')
 
 def user_logout(request):
+    messages.success(request, 'Account was successfully Logged Out.')
     logout(request)
-    return redirect('login')
+    return redirect('home')
 
 def change_password(request):
     if request.user.is_authenticated:

@@ -2,4 +2,9 @@
 
 {% block content %}
 <h1>Home page</h1>
+{% if messages %}
+{% for m in messages %}
+<strong {% if m.tags %} class="{{m.tags}}" {% endif %}>{{m}}</strong>
+{% endfor%}
+{% endif %}
 {% endblock %}
