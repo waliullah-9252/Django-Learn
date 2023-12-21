@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container w-80 m-auto">
+  <h1>Welcome Your Profile</h1>
+  <a href="{% url 'update_profile' %}" class="btn btn-success"
+    >Update Your Profile</a
+  >
+</div>
+
+<div class="col-md-12 px-3">
+  <div class="row mt-3">
+    {% for car in buy_cars %}
+    <div class="col-sm-4 mb-sm-0">
+      <div class="card mb-3">
+        <div class="card-body">
+          <img src="{{car.admin_post.image.url}}" class="card-img-top" alt="card image">
+          <h5 class="card-title">Car Name: {{car.admin_post.car_name}}</h5>
+          {% for b in car.admin_post.brand.all %}
+            <h5 class="card-title">Brand Name: {{b.brand_name }}</h5>
+            {% endfor %}
+          <h5 class="card-title">Price: {{car.admin_post.price}}</h5>
+          <h5 class="card-title">Quantity: {{car.quantity}}</h5>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
