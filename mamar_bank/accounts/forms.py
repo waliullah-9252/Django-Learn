@@ -45,6 +45,7 @@ class UserRegistrationForm(UserCreationForm):
                 account_no = 100000+our_user.id
             )
             return our_user
+        
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
