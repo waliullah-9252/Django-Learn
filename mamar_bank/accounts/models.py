@@ -4,7 +4,7 @@ from .constants import ACCOUNT_TYPE, GENDER_TYPE
 
 # Create your models here.
 class UserBankAccount(models.Model):
-    user = models.OneToOneField(User, related_name='accounts', on_delete = models.CASCADE)
+    user = models.OneToOneField(User, related_name='account', on_delete = models.CASCADE,null= True,blank= True)
     account_type = models.CharField(max_length=15, choices = ACCOUNT_TYPE)
     account_no = models.IntegerField(unique=True)
     birth_date = models.DateField(null=True, blank=True)

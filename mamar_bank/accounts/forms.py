@@ -85,7 +85,7 @@ class UserUpdateForm(forms.ModelForm):
         
         if self.instance:
             try:
-                user_account = self.instance.accounts
+                user_account = self.instance.account
                 user_address = self.instance.address
             except UserBankAccount.DoesNotExist:
                 user_account = None
