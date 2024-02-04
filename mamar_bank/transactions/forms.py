@@ -4,7 +4,7 @@ from .models import Transaction
 class TransactionForm(forms.ModelForm):
     class Meta:
         model = Transaction
-        fields = ['amount', 'transaction_type']
+        fields = ['amount', 'transaction_type',]
 
     def __init__(self, *args, **kwargs):
         self.account = kwargs.pop('account')
@@ -53,3 +53,8 @@ class LoanRequestForm(TransactionForm):
     def clean_amount(self):
         amount = self.cleaned_data.get('amount')
         return amount
+
+
+class TransferBalanceForm(forms.Form):
+    amount = forms.DecimalField()
+    receiver_id = forms.IntegerField()
